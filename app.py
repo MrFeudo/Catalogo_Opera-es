@@ -139,7 +139,7 @@ def check_password():
         st.title(txt["pass_titulo"])
         password = st.text_input(txt["pass_input"], type="password")
         if st.button(txt["pass_boton"]):
-            if password == "DealersOJ2026":
+            if password == "DealersPT2026":
                 st.session_state.authenticated = True
                 st.rerun()
             else:
@@ -156,7 +156,7 @@ if check_password():
         
         @st.cache_data
         def load_data_tiempos_v3():
-            df = pd.read_excel("DMS_Active_Spare_Parts.xlsx", sheet_name="new_srv_workhours")
+            df = pd.read_excel("DMS_Active_Spare_Parts_Portugal.xlsx", sheet_name="new_srv_workhours")
             df.columns = df.columns.astype(str).str.strip()
             
             # Mapeamos usando "organization" que es el nombre real en esta pestaña
@@ -263,7 +263,7 @@ if check_password():
         
         @st.cache_data
         def load_prices_nueva_version():
-            df = pd.read_excel("DMS_Active_Spare_Parts.xlsx", sheet_name="Parts price")
+            df = pd.read_excel("DMS_Active_Spare_Parts_Portugal.xlsx", sheet_name="Parts price")
             df.columns = df.columns.astype(str).str.strip()
             
             # Mapeamos usando "new_businessunit_idname" que corresponde a esta hoja
